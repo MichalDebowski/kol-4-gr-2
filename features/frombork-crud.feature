@@ -24,6 +24,7 @@ Feature: I would like to edit frombork
     | pomorska     | ulicapomorska    | 234  |
 
 
+
   Scenario Outline: Edit records
    Given I am on homepage
      And I follow "Login"
@@ -45,6 +46,7 @@ Feature: I would like to edit frombork
      And I should see "<new-size>"
      And I should not see "<old-frombork>"
 
+
   Examples:
     | old-frombork   | new-frombork  | new-caption   | new-size   |
     | pruska         | niewiadoma1   | zbedny opis   | 3453       |
@@ -62,6 +64,7 @@ Feature: I would like to edit frombork
     Then I should see "<frombork>"
     When I press "Delete"
     Then I should not see "<frombork>"
+
 
   Examples:
     |  frombork   |
