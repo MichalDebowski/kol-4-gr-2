@@ -1,22 +1,23 @@
 Feature: I would like to edit reptiles
 
   Scenario Outline: Insert records
-   Given I am on homepage
-     And I follow "Login"
-     And I fill in "Username" with "admin"
-     And I fill in "Password" with "loremipsum"
-     And I press "Login"
-     And I go to "/admin/wroclaw/"
+    Given I am on homepage
+    And I follow "Login"
+    And I fill in "Username" with "admin"
+    And I fill in "Password" with "loremipsum"
+    And I press "Login"
+    And I follow "Wroclaw"
+    And I go to "/admin/wroclaw/"
     Then I should not see "<wroclaw>"
-     And I follow "Create a new entry"
-    Then I should see "Reptile creation"
+    And I follow "Create a new entry"
+    Then I should see "Wroclaw creation"
     When I fill in "Name" with "<wroclaw>"
-     And I fill in "Caption" with "<caption>"
-     And I fill in "Size" with "<size>"
-     And I press "Create"
+    And I fill in "Caption" with "<caption>"
+    And I fill in "Size" with "<size>"
+    And I press "Create"
     Then I should see "<wroclaw>"
-     And I should see "<caption>"
-     And I should see "<size>"
+    And I should see "<caption>"
+    And I should see "<size>"
 
   Examples:
     | wroclaw      | caption | size | 
